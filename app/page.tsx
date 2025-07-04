@@ -338,33 +338,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* CTAセクション */}
-        <section className="text-white py-32 mt-32" style={{ backgroundColor: '#79A676' }}>
-          <div className="max-w-[1600px] mx-auto px-12">
-            <div className="grid grid-cols-12 gap-16">
-              <div className="col-span-8">
-                <h2 className="text-[3.5rem] leading-[1.1] font-thin mb-8">
-                  持続可能な未来への<br />
-                  ソリューション
-                </h2>
-                <p className="text-xl font-extralight text-white/80 mb-16 max-w-2xl">
-                  製品に関するご質問やカスタマイズのご相談を承っております
-                </p>
-              </div>
-              <div className="col-span-4 flex items-end">
-                <div className="w-full">
-                  <a href="#" className="block border border-white py-6 px-12 text-center text-sm font-light tracking-[0.2em] hover:bg-white transition-all duration-500" style={{ color: 'inherit' }}>
-                    CONTACT US
-                  </a>
-                  <div className="mt-8 text-center">
-                    <p className="text-xs font-light tracking-[0.2em] text-white/60 mb-2">DIRECT LINE</p>
-                    <p className="text-2xl font-thin tracking-wider">044-433-2065</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     )
   }
@@ -561,19 +534,18 @@ export default function Home() {
 
       {/* フッター */}
       <footer className="text-white" style={{ backgroundColor: '#79A676' }}>
-        <div className="max-w-[1600px] mx-auto px-12 py-20">
-          <div className="grid grid-cols-12 gap-16 mb-20">
+        <div className="max-w-[1600px] mx-auto px-12 py-12">
+          <div className="grid grid-cols-12 gap-16 mb-8">
             <div className="col-span-6">
-              <h3 className="text-2xl font-thin tracking-[0.4em] mb-8 text-white">ECOLOPACK</h3>
+              <h3 className="text-xl font-thin tracking-[0.4em] mb-4 text-white">ECOLOPACK</h3>
               <p className="text-sm font-light text-white/80 leading-relaxed max-w-md">
-                植物由来の緩衝材開発を通じて、<br />
-                持続可能な社会の実現に貢献しています。
+                植物由来の緩衝材開発を通じて、持続可能な社会の実現に貢献しています。
               </p>
             </div>
             
             <div className="col-span-3">
-              <p className="text-xs font-light tracking-[0.3em] text-white/60 mb-6">PRODUCTS</p>
-              <ul className="space-y-3 text-sm font-light">
+              <p className="text-xs font-light tracking-[0.3em] text-white/60 mb-4">PRODUCTS</p>
+              <ul className="space-y-2 text-sm font-light">
                 <li><a href="#" className="text-white/80 hover:text-white transition-colors">Branform Series</a></li>
                 <li><a href="#" className="text-white/80 hover:text-white transition-colors">Ecolopat</a></li>
                 <li><a href="#" className="text-white/80 hover:text-white transition-colors">Product Catalog</a></li>
@@ -581,21 +553,21 @@ export default function Home() {
             </div>
             
             <div className="col-span-3">
-              <p className="text-xs font-light tracking-[0.3em] text-white/60 mb-6">CONTACT</p>
+              <p className="text-xs font-light tracking-[0.3em] text-white/60 mb-4">CONTACT</p>
               <address className="text-sm font-light text-white/80 not-italic">
                 〒211-8530<br />
                 川崎市中原区苅宿45-1<br />
-                <span className="text-white text-lg">044-433-2065</span>
+                <span className="text-white">044-433-2065</span>
               </address>
             </div>
           </div>
           
-          <div className="pt-8 border-t border-white/20">
+          <div className="pt-6 border-t border-white/20">
             <div className="flex justify-between items-center">
               <p className="text-xs font-light text-white/60">
                 © 2024 ECOLOPACK CORPORATION. ALL RIGHTS RESERVED.
               </p>
-              <div className="flex space-x-8">
+              <div className="flex space-x-6">
                 <a href="#" className="text-xs font-light text-white/60 hover:text-white transition-colors">PRIVACY POLICY</a>
                 <a href="#" className="text-xs font-light text-white/60 hover:text-white transition-colors">TERMS OF USE</a>
               </div>
