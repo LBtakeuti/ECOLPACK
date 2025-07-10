@@ -169,28 +169,29 @@ const productData: Record<TabType, ProductData | null> = {
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabType>('top')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const renderProductContent = (data: ProductData, currentTab: TabType) => {
     return (
       <div className="w-full">
         {/* ヒーローセクション */}
-        <section className="min-h-[70vh] flex items-center bg-gradient-to-b from-green-50 to-white">
-          <div className="w-full">
-            <div className="max-w-[1600px] mx-auto px-12">
-              <div className="grid grid-cols-12 gap-8">
-                <div className="col-span-8">
-                  <h1 className="text-[3rem] leading-[1.1] font-light tracking-tight mb-8">
+        <section className="min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] flex items-center bg-gradient-to-b from-green-50 to-white">
+          <div className="w-full py-8 sm:py-12 lg:py-0">
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div className="lg:col-span-8">
+                  <h1 className="text-2xl sm:text-3xl lg:text-[3rem] leading-[1.2] lg:leading-[1.1] font-light tracking-tight mb-4 sm:mb-6 lg:mb-8">
                     {data.title}
                   </h1>
-                  <div className="w-24 h-px mb-8" style={{ backgroundColor: '#79A676' }}></div>
-                  <p className="text-2xl font-extralight text-gray-700 max-w-2xl">
+                  <div className="w-16 sm:w-20 lg:w-24 h-px mb-4 sm:mb-6 lg:mb-8" style={{ backgroundColor: '#79A676' }}></div>
+                  <p className="text-lg sm:text-xl lg:text-2xl font-extralight text-gray-700 max-w-2xl">
                     {data.subtitle}
                   </p>
                 </div>
-                <div className="col-span-4 flex items-end justify-end">
-                  <div className="text-right">
+                <div className="lg:col-span-4 flex items-center lg:items-end justify-center lg:justify-end mt-8 lg:mt-0">
+                  <div className="text-center lg:text-right">
                     <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2">ESTABLISHED</p>
-                    <p className="text-5xl font-thin" style={{ color: '#79A676' }}>1996</p>
+                    <p className="text-3xl sm:text-4xl lg:text-5xl font-thin" style={{ color: '#79A676' }}>1996</p>
                   </div>
                 </div>
               </div>
@@ -199,12 +200,12 @@ export default function Home() {
         </section>
 
         {/* メインコンテンツ */}
-        <div className="max-w-[1600px] mx-auto px-12 py-16">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12 lg:py-16">
 
           {/* 製品ビジュアルセクション */}
-          <section className="mb-32">
-            <div className="grid grid-cols-12 gap-16">
-              <div className="col-span-5">
+          <section className="mb-16 sm:mb-24 lg:mb-32">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+              <div className="lg:col-span-5">
                 {data.images.main && (
                   <div className="bg-white aspect-[4/3] flex items-center justify-center">
                     <Image 
@@ -218,30 +219,30 @@ export default function Home() {
                 )}
               </div>
               
-              <div className="col-span-7">
-                <h2 className="text-xs font-light tracking-[0.3em] mb-8" style={{ color: '#79A676' }}>PRODUCT FEATURES</h2>
-                <div className="space-y-12 mb-20">
+              <div className="lg:col-span-7">
+                <h2 className="text-xs font-light tracking-[0.3em] mb-6 lg:mb-8" style={{ color: '#79A676' }}>PRODUCT FEATURES</h2>
+                <div className="space-y-6 sm:space-y-8 lg:space-y-12 mb-12 lg:mb-20">
                   {data.features.slice(0, 3).map((feature, index) => (
-                    <div key={index} className="grid grid-cols-12 gap-4">
-                      <div className="col-span-1">
+                    <div key={index} className="grid grid-cols-12 gap-2 sm:gap-4">
+                      <div className="col-span-2 sm:col-span-1">
                         <span className="text-xs font-light text-gray-400">{String(index + 1).padStart(2, '0')}</span>
                       </div>
-                      <div className="col-span-11">
-                        <p className="text-lg font-light leading-relaxed text-gray-800">{feature}</p>
+                      <div className="col-span-10 sm:col-span-11">
+                        <p className="text-sm sm:text-base lg:text-lg font-light leading-relaxed text-gray-800">{feature}</p>
                       </div>
                     </div>
                   ))}
                 </div>
                 
-                <div className="border-t border-gray-200 pt-12">
-                  <div className="grid grid-cols-2 gap-16">
+                <div className="border-t border-gray-200 pt-8 lg:pt-12">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
                     <div>
-                      <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3">MAIN MATERIAL</p>
-                      <p className="text-xl font-light">{data.materials['緩衝材']}</p>
+                      <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2 lg:mb-3">MAIN MATERIAL</p>
+                      <p className="text-base sm:text-lg lg:text-xl font-light">{data.materials['緩衝材']}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3">PACKAGE TYPE</p>
-                      <p className="text-xl font-light">{data.specifications['包装袋仕様']}</p>
+                      <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2 lg:mb-3">PACKAGE TYPE</p>
+                      <p className="text-base sm:text-lg lg:text-xl font-light">{data.specifications['包装袋仕様']}</p>
                     </div>
                   </div>
                 </div>
@@ -249,14 +250,14 @@ export default function Home() {
             </div>
           </section>
           {/* 仕様詳細セクション */}
-          <section className="py-24 -mx-12 px-12 mb-32 bg-green-50">
+          <section className="py-12 sm:py-16 lg:py-24 -mx-4 sm:-mx-8 lg:-mx-12 px-4 sm:px-8 lg:px-12 mb-16 sm:mb-24 lg:mb-32 bg-green-50">
             <div className="max-w-[1600px] mx-auto">
-              <h3 className="text-xs font-light tracking-[0.3em] mb-16 text-center" style={{ color: '#79A676' }}>SPECIFICATIONS</h3>
-              <div className="grid grid-cols-5 gap-px" style={{ backgroundColor: '#79A676' }}>
+              <h3 className="text-xs font-light tracking-[0.3em] mb-8 sm:mb-12 lg:mb-16 text-center" style={{ color: '#79A676' }}>SPECIFICATIONS</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px" style={{ backgroundColor: '#79A676' }}>
                 {Object.entries(data.specifications).map(([key, value]) => (
-                  <div key={key} className="bg-white p-12 text-center">
-                    <p className="text-xs font-light tracking-[0.2em] text-gray-500 mb-4">{key}</p>
-                    <p className="text-lg font-light text-gray-900">{value}</p>
+                  <div key={key} className="bg-white p-6 sm:p-8 lg:p-12 text-center">
+                    <p className="text-xs font-light tracking-[0.2em] text-gray-500 mb-2 sm:mb-3 lg:mb-4">{key}</p>
+                    <p className="text-sm sm:text-base lg:text-lg font-light text-gray-900">{value}</p>
                   </div>
                 ))}
               </div>
@@ -266,11 +267,11 @@ export default function Home() {
           {/* 製品画像ギャラリー */}
           {(data.images.packaging || data.images.smallBag || data.images.usage) && (
             <section>
-              <h3 className="text-xs font-light tracking-[0.3em] mb-16" style={{ color: '#79A676' }}>PRODUCT DETAILS</h3>
-              <div className="grid grid-cols-3 gap-8">
+              <h3 className="text-xs font-light tracking-[0.3em] mb-8 sm:mb-12 lg:mb-16" style={{ color: '#79A676' }}>PRODUCT DETAILS</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {data.images.packaging && (
                   <div className="bg-white">
-                    <div className="aspect-square bg-white p-16">
+                    <div className="aspect-square bg-white p-8 sm:p-12 lg:p-16">
                       <Image 
                         src={data.images.packaging} 
                         alt="外装形態" 
@@ -279,14 +280,14 @@ export default function Home() {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div className="p-6">
+                    <div className="p-4 sm:p-5 lg:p-6">
                       <p className="text-xs font-light tracking-[0.2em] text-gray-600">外装形態</p>
                     </div>
                   </div>
                 )}
                 {data.images.smallBag && (
                   <div className="bg-white">
-                    <div className="aspect-square bg-white p-16">
+                    <div className="aspect-square bg-white p-8 sm:p-12 lg:p-16">
                       <Image 
                         src={data.images.smallBag} 
                         alt="小袋" 
@@ -295,14 +296,14 @@ export default function Home() {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div className="p-6">
+                    <div className="p-4 sm:p-5 lg:p-6">
                       <p className="text-xs font-light tracking-[0.2em] text-gray-600">小袋</p>
                     </div>
                   </div>
                 )}
                 {data.images.usage && data.images.usage.map((img, index) => (
                   <div key={index} className="bg-white">
-                    <div className="aspect-square bg-white p-16">
+                    <div className="aspect-square bg-white p-8 sm:p-12 lg:p-16">
                       <Image 
                         src={img} 
                         alt={`使用例${index + 1}`} 
@@ -311,7 +312,7 @@ export default function Home() {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div className="p-6">
+                    <div className="p-4 sm:p-5 lg:p-6">
                       <p className="text-xs font-light tracking-[0.2em] text-gray-600">使用例 {index + 1}</p>
                     </div>
                   </div>
@@ -322,15 +323,15 @@ export default function Home() {
 
           {/* その他の特徴 */}
           {data.features.length > 3 && (
-            <section className="border-t border-gray-200 pt-16">
-              <h3 className="text-xl font-light text-gray-900 mb-6">その他の特徴</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <section className="border-t border-gray-200 pt-8 sm:pt-12 lg:pt-16">
+              <h3 className="text-lg sm:text-xl font-light text-gray-900 mb-4 sm:mb-6">その他の特徴</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 {data.features.slice(3).map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <svg className="w-5 h-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-5 h-5 text-emerald-500 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <p className="text-gray-700">{feature}</p>
+                    <p className="text-sm sm:text-base text-gray-700">{feature}</p>
                   </div>
                 ))}
               </div>
@@ -345,13 +346,13 @@ export default function Home() {
   const renderCompanyInfo = () => {
     return (
       <div className="w-full">
-        <section className="min-h-[60vh] text-white flex items-center" style={{ backgroundColor: '#79A676' }}>
-          <div className="w-full">
-            <div className="max-w-[1600px] mx-auto px-12">
-              <div className="grid grid-cols-12">
-                <div className="col-span-8">
-                  <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-8">COMPANY OVERVIEW</p>
-                  <h1 className="text-[5rem] leading-[0.9] font-thin tracking-tight">
+        <section className="min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh] text-white flex items-center" style={{ backgroundColor: '#79A676' }}>
+          <div className="w-full py-8 sm:py-12 lg:py-0">
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                <div className="lg:col-span-8">
+                  <p className="text-xs font-light tracking-[0.3em] text-gray-300 mb-4 sm:mb-6 lg:mb-8">COMPANY OVERVIEW</p>
+                  <h1 className="text-3xl sm:text-4xl lg:text-[5rem] leading-[1.1] lg:leading-[0.9] font-thin tracking-tight">
                     株式会社<br />
                     エコロパック
                   </h1>
@@ -362,80 +363,80 @@ export default function Home() {
         </section>
 
         <div className="bg-white">
-          <div className="max-w-[1600px] mx-auto px-12 py-32">
-            <div className="grid grid-cols-3 gap-px mb-32" style={{ backgroundColor: '#79A676' }}>
-              <div className="bg-white p-16 text-center">
-                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-6">ESTABLISHED</p>
-                <p className="text-6xl font-thin">1996</p>
-                <p className="text-sm font-light text-gray-600 mt-4">年6月11日</p>
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-24 lg:py-32">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px mb-16 sm:mb-24 lg:mb-32" style={{ backgroundColor: '#79A676' }}>
+              <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
+                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">ESTABLISHED</p>
+                <p className="text-3xl sm:text-4xl lg:text-6xl font-thin">1996</p>
+                <p className="text-sm font-light text-gray-600 mt-2 sm:mt-3 lg:mt-4">年6月11日</p>
               </div>
-              <div className="bg-white p-16 text-center">
-                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-6">CAPITAL</p>
-                <p className="text-6xl font-thin">3,600</p>
-                <p className="text-sm font-light text-gray-600 mt-4">万円</p>
+              <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
+                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">CAPITAL</p>
+                <p className="text-3xl sm:text-4xl lg:text-6xl font-thin">3,600</p>
+                <p className="text-sm font-light text-gray-600 mt-2 sm:mt-3 lg:mt-4">万円</p>
               </div>
-              <div className="bg-white p-16 text-center">
-                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-6">CEO</p>
-                <p className="text-3xl font-thin mt-4">丸山 陸雄</p>
+              <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
+                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">CEO</p>
+                <p className="text-xl sm:text-2xl lg:text-3xl font-thin mt-2 sm:mt-3 lg:mt-4">丸山 陸雄</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
               <div>
-                <div className="mb-8">
-                  <p className="text-sm font-light text-gray-500 mb-3">Corporate Information</p>
-                  <h3 className="text-2xl font-extralight text-gray-900">企業情報</h3>
+                <div className="mb-6 sm:mb-8">
+                  <p className="text-sm font-light text-gray-500 mb-2 sm:mb-3">Corporate Information</p>
+                  <h3 className="text-xl sm:text-2xl font-extralight text-gray-900">企業情報</h3>
                 </div>
                 
-                <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-10 border border-gray-100">
-                  <div className="space-y-8">
+                <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-100">
+                  <div className="space-y-6 sm:space-y-8">
                     <div>
-                      <h4 className="text-xl font-light text-gray-900 mb-3">株式会社エコロパック</h4>
-                      <p className="text-gray-600 font-light">帝国通信工業株式会社（東証プライム上場）全額出資</p>
+                      <h4 className="text-lg sm:text-xl font-light text-gray-900 mb-2 sm:mb-3">株式会社エコロパック</h4>
+                      <p className="text-sm sm:text-base text-gray-600 font-light">帝国通信工業株式会社（東証プライム上場）全額出資</p>
                     </div>
 
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                    <div className="space-y-3 sm:space-y-4">
+                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-100">
                         <p className="text-sm text-gray-500">取引銀行</p>
-                        <p className="text-gray-900">みずほ銀行</p>
+                        <p className="text-sm sm:text-base text-gray-900">みずほ銀行</p>
                       </div>
-                      <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-100">
                         <p className="text-sm text-gray-500">組織形態</p>
-                        <p className="text-gray-900">株式会社</p>
+                        <p className="text-sm sm:text-base text-gray-900">株式会社</p>
                       </div>
-                      <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-100">
                         <p className="text-sm text-gray-500">従業員数</p>
-                        <p className="text-gray-900">50名</p>
+                        <p className="text-sm sm:text-base text-gray-900">50名</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div>
-                <h3 className="text-2xl font-light text-gray-900 mb-8">事業内容</h3>
+              <div className="mt-8 lg:mt-0">
+                <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-6 sm:mb-8">事業内容</h3>
                 
-                <div className="space-y-6">
-                  <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow">
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <span className="text-sm text-gray-600">R&D</span>
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                        <span className="text-xs sm:text-sm text-gray-600">R&D</span>
                       </div>
                       <div>
-                        <h4 className="text-lg font-medium text-gray-900 mb-2">研究開発</h4>
-                        <p className="text-gray-600">天然有機物と熱可塑性樹脂との複合材の開発</p>
+                        <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-1 sm:mb-2">研究開発</h4>
+                        <p className="text-sm sm:text-base text-gray-600">天然有機物と熱可塑性樹脂との複合材の開発</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow">
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <span className="text-sm text-gray-600">MFG</span>
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                        <span className="text-xs sm:text-sm text-gray-600">MFG</span>
                       </div>
                       <div>
-                        <h4 className="text-lg font-medium text-gray-900 mb-2">製品ラインナップ</h4>
-                        <ul className="space-y-1 text-gray-600">
+                        <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-1 sm:mb-2">製品ラインナップ</h4>
+                        <ul className="space-y-1 text-sm sm:text-base text-gray-600">
                           <li>・バラ状緩衝材（ブランフォームシリーズ）</li>
                           <li>・シート状緩衝材（エコロパット）</li>
                           <li>・パット状発泡緩衝材（ブランフォームグリーン）</li>
@@ -447,29 +448,29 @@ export default function Home() {
               </div>
             </div>
 
-            <section className="mt-32">
-              <h3 className="text-2xl font-light text-gray-900 mb-16 text-center">事業拠点</h3>
+            <section className="mt-16 sm:mt-24 lg:mt-32">
+              <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-8 sm:mb-12 lg:mb-16 text-center">事業拠点</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-gray-50 p-12 text-center">
-                  <h4 className="text-xl font-medium text-gray-900 mb-4">本社</h4>
-                  <p className="text-gray-600 mb-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12 text-center">
+                  <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-3 sm:mb-4">本社</h4>
+                  <p className="text-sm sm:text-base text-gray-600 mb-2">
                     〒211-8530<br />
                     川崎市中原区苅宿45-1
                   </p>
-                  <div className="space-y-1 text-sm text-gray-500">
+                  <div className="space-y-1 text-xs sm:text-sm text-gray-500">
                     <p>TEL: 044-433-2065</p>
                     <p>FAX: 044-433-8706</p>
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-12 text-center">
-                  <h4 className="text-xl font-medium text-gray-900 mb-4">さいたま工場</h4>
-                  <p className="text-gray-600 mb-2">
+                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12 text-center">
+                  <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-3 sm:mb-4">さいたま工場</h4>
+                  <p className="text-sm sm:text-base text-gray-600 mb-2">
                     〒339-0073<br />
                     埼玉県さいたま市岩槻区上野4-6-10
                   </p>
-                  <div className="space-y-1 text-sm text-gray-500">
+                  <div className="space-y-1 text-xs sm:text-sm text-gray-500">
                     <p>TEL: 048-792-0958</p>
                     <p>FAX: 048-792-0959</p>
                   </div>
@@ -487,19 +488,34 @@ export default function Home() {
       {/* ヘッダー */}
       <header className="fixed w-full top-0 z-50" style={{ backgroundColor: '#79A676' }}>
         <div className="max-w-[1600px] mx-auto">
-          <div className="flex items-center justify-between px-12 py-8">
+          <div className="flex items-center justify-between px-4 sm:px-8 lg:px-12 py-4 sm:py-6 lg:py-8">
             <div className="flex items-center">
-              <h1 className="text-2xl font-extralight tracking-[0.4em] text-white">ECOLOPACK</h1>
+              <h1 className="text-lg sm:text-xl lg:text-2xl font-extralight tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.4em] text-white">ECOLOPACK</h1>
             </div>
+            
+            {/* モバイルメニューボタン */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 text-white"
+              aria-label="メニュー"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
       </header>
 
       {/* スペーサー */}
-      <div className="h-[104px]"></div>
+      <div className="h-[72px] sm:h-[88px] lg:h-[104px]"></div>
 
-      {/* ナビゲーション */}
-      <nav className="bg-white border-b border-gray-100">
+      {/* デスクトップナビゲーション */}
+      <nav className="hidden lg:block bg-white border-b border-gray-100">
         <div className="max-w-[1600px] mx-auto px-12">
           <div className="flex overflow-x-auto scrollbar-hide">
             {['top', 'branform', 'big', 'ecolopat', 'green', 'company'].map((tab) => (
@@ -525,6 +541,33 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* モバイルナビゲーション */}
+      <nav className={`lg:hidden bg-white border-b border-gray-100 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+        <div className="px-4 py-2">
+          {['top', 'branform', 'big', 'ecolopat', 'green', 'company'].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => {
+                setActiveTab(tab as TabType)
+                setIsMobileMenuOpen(false)
+              }}
+              className={`block w-full text-left px-4 py-3 text-sm font-light tracking-wider ${
+                activeTab === tab 
+                  ? 'text-black bg-gray-50' 
+                  : 'text-gray-600'
+              }`}
+            >
+              {tab === 'top' && 'BRANFORM TOP'}
+              {tab === 'branform' && 'BRANFORM'}
+              {tab === 'big' && 'BRANFORM BIG'}
+              {tab === 'ecolopat' && 'ECOLOPAT'}
+              {tab === 'green' && 'BRANFORM GREEN'}
+              {tab === 'company' && 'COMPANY'}
+            </button>
+          ))}
+        </div>
+      </nav>
+
       {/* コンテンツ */}
       <div>
         {activeTab === 'company' 
@@ -534,27 +577,27 @@ export default function Home() {
 
       {/* フッター */}
       <footer className="text-white" style={{ backgroundColor: '#79A676' }}>
-        <div className="max-w-[1600px] mx-auto px-12 py-12">
-          <div className="grid grid-cols-12 gap-16 mb-8">
-            <div className="col-span-6">
-              <h3 className="text-xl font-thin tracking-[0.4em] mb-4 text-white">ECOLOPACK</h3>
-              <p className="text-sm font-light text-white/80 leading-relaxed max-w-md">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 mb-6 sm:mb-8">
+            <div className="lg:col-span-6">
+              <h3 className="text-lg sm:text-xl font-thin tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.4em] mb-3 sm:mb-4 text-white">ECOLOPACK</h3>
+              <p className="text-xs sm:text-sm font-light text-white/80 leading-relaxed max-w-md">
                 植物由来の緩衝材開発を通じて、持続可能な社会の実現に貢献しています。
               </p>
             </div>
             
-            <div className="col-span-3">
-              <p className="text-xs font-light tracking-[0.3em] text-white/60 mb-4">PRODUCTS</p>
-              <ul className="space-y-2 text-sm font-light">
+            <div className="lg:col-span-3">
+              <p className="text-xs font-light tracking-[0.3em] text-white/60 mb-3 sm:mb-4">PRODUCTS</p>
+              <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm font-light">
                 <li><a href="#" className="text-white/80 hover:text-white transition-colors">Branform Series</a></li>
                 <li><a href="#" className="text-white/80 hover:text-white transition-colors">Ecolopat</a></li>
                 <li><a href="#" className="text-white/80 hover:text-white transition-colors">Product Catalog</a></li>
               </ul>
             </div>
             
-            <div className="col-span-3">
-              <p className="text-xs font-light tracking-[0.3em] text-white/60 mb-4">CONTACT</p>
-              <address className="text-sm font-light text-white/80 not-italic">
+            <div className="lg:col-span-3">
+              <p className="text-xs font-light tracking-[0.3em] text-white/60 mb-3 sm:mb-4">CONTACT</p>
+              <address className="text-xs sm:text-sm font-light text-white/80 not-italic">
                 〒211-8530<br />
                 川崎市中原区苅宿45-1<br />
                 <span className="text-white">044-433-2065</span>
@@ -562,12 +605,12 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="pt-6 border-t border-white/20">
-            <div className="flex justify-between items-center">
-              <p className="text-xs font-light text-white/60">
+          <div className="pt-4 sm:pt-6 border-t border-white/20">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-xs font-light text-white/60 text-center sm:text-left">
                 © 2024 ECOLOPACK CORPORATION. ALL RIGHTS RESERVED.
               </p>
-              <div className="flex space-x-6">
+              <div className="flex space-x-4 sm:space-x-6">
                 <a href="#" className="text-xs font-light text-white/60 hover:text-white transition-colors">PRIVACY POLICY</a>
                 <a href="#" className="text-xs font-light text-white/60 hover:text-white transition-colors">TERMS OF USE</a>
               </div>
