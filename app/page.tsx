@@ -175,23 +175,23 @@ export default function Home() {
     return (
       <div className="w-full">
         {/* ヒーローセクション */}
-        <section className="min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] flex items-center bg-gradient-to-b from-green-50 to-white">
-          <div className="w-full py-8 sm:py-12 lg:py-0">
+        <section className="min-h-[40vh] sm:min-h-[50vh] lg:min-h-[70vh] flex items-center bg-gradient-to-b from-green-50 to-white">
+          <div className="w-full py-6 sm:py-10 lg:py-0">
             <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
                 <div className="lg:col-span-8">
-                  <h1 className="text-2xl sm:text-3xl lg:text-[3rem] leading-[1.2] lg:leading-[1.1] font-light tracking-tight mb-4 sm:mb-6 lg:mb-8">
+                  <h1 className="text-xl sm:text-2xl lg:text-[3rem] leading-[1.3] lg:leading-[1.1] font-light tracking-tight mb-3 sm:mb-4 lg:mb-8">
                     {data.title}
                   </h1>
-                  <div className="w-16 sm:w-20 lg:w-24 h-px mb-4 sm:mb-6 lg:mb-8" style={{ backgroundColor: '#79A676' }}></div>
-                  <p className="text-lg sm:text-xl lg:text-2xl font-extralight text-gray-700 max-w-2xl">
+                  <div className="w-12 sm:w-16 lg:w-24 h-px mb-3 sm:mb-4 lg:mb-8" style={{ backgroundColor: '#79A676' }}></div>
+                  <p className="text-base sm:text-lg lg:text-2xl font-extralight text-gray-700 max-w-2xl">
                     {data.subtitle}
                   </p>
                 </div>
-                <div className="lg:col-span-4 flex items-center lg:items-end justify-center lg:justify-end mt-8 lg:mt-0">
+                <div className="lg:col-span-4 flex items-center lg:items-end justify-center lg:justify-end mt-4 sm:mt-6 lg:mt-0">
                   <div className="text-center lg:text-right">
-                    <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2">ESTABLISHED</p>
-                    <p className="text-3xl sm:text-4xl lg:text-5xl font-thin" style={{ color: '#79A676' }}>1996</p>
+                    <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-1 sm:mb-2">ESTABLISHED</p>
+                    <p className="text-2xl sm:text-3xl lg:text-5xl font-thin" style={{ color: '#79A676' }}>1996</p>
                   </div>
                 </div>
               </div>
@@ -346,16 +346,29 @@ export default function Home() {
   const renderCompanyInfo = () => {
     return (
       <div className="w-full">
-        <section className="min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh] text-white flex items-center" style={{ backgroundColor: '#79A676' }}>
-          <div className="w-full py-8 sm:py-12 lg:py-0">
+        <section className="min-h-[35vh] sm:min-h-[45vh] lg:min-h-[60vh] text-white flex items-center relative overflow-hidden" style={{ backgroundColor: '#79A676' }}>
+          {/* 背景パターン */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px)`
+            }}></div>
+          </div>
+          
+          <div className="relative w-full py-8 sm:py-10 lg:py-0">
             <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 <div className="lg:col-span-8">
-                  <p className="text-xs font-light tracking-[0.3em] text-gray-300 mb-4 sm:mb-6 lg:mb-8">COMPANY OVERVIEW</p>
-                  <h1 className="text-3xl sm:text-4xl lg:text-[5rem] leading-[1.1] lg:leading-[0.9] font-thin tracking-tight">
+                  <p className="text-xs font-light tracking-[0.3em] text-white/70 mb-3 sm:mb-4 lg:mb-8">COMPANY OVERVIEW</p>
+                  <h1 className="text-2xl sm:text-3xl lg:text-[5rem] leading-[1.2] lg:leading-[0.9] font-thin tracking-tight">
                     株式会社<br />
                     エコロパック
                   </h1>
+                  {/* モバイル向け追加情報 */}
+                  <div className="mt-6 lg:hidden">
+                    <p className="text-sm text-white/80 font-light">
+                      環境に優しい緩衝材のパイオニア
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -364,20 +377,42 @@ export default function Home() {
 
         <div className="bg-white">
           <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-24 lg:py-32">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px mb-16 sm:mb-24 lg:mb-32" style={{ backgroundColor: '#79A676' }}>
-              <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
-                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">ESTABLISHED</p>
-                <p className="text-3xl sm:text-4xl lg:text-6xl font-thin">1996</p>
-                <p className="text-sm font-light text-gray-600 mt-2 sm:mt-3 lg:mt-4">年6月11日</p>
+            {/* モバイル向けカード表示 */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-px mb-12 sm:mb-24 lg:mb-32">
+              <div className="bg-gradient-to-br from-green-50 to-white sm:bg-white rounded-2xl sm:rounded-none shadow-sm sm:shadow-none p-6 sm:p-12 lg:p-16 text-center border border-gray-100 sm:border-0">
+                <div className="flex items-center justify-center mb-3 sm:mb-0">
+                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center sm:hidden">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                </div>
+                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2 sm:mb-4 lg:mb-6">ESTABLISHED</p>
+                <p className="text-2xl sm:text-4xl lg:text-6xl font-thin" style={{ color: '#79A676' }}>1996</p>
+                <p className="text-sm font-light text-gray-600 mt-1 sm:mt-3 lg:mt-4">年6月11日</p>
               </div>
-              <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
-                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">CAPITAL</p>
-                <p className="text-3xl sm:text-4xl lg:text-6xl font-thin">3,600</p>
-                <p className="text-sm font-light text-gray-600 mt-2 sm:mt-3 lg:mt-4">万円</p>
+              <div className="bg-gradient-to-br from-green-50 to-white sm:bg-white rounded-2xl sm:rounded-none shadow-sm sm:shadow-none p-6 sm:p-12 lg:p-16 text-center border border-gray-100 sm:border-0">
+                <div className="flex items-center justify-center mb-3 sm:mb-0">
+                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center sm:hidden">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2 sm:mb-4 lg:mb-6">CAPITAL</p>
+                <p className="text-2xl sm:text-4xl lg:text-6xl font-thin" style={{ color: '#79A676' }}>3,600</p>
+                <p className="text-sm font-light text-gray-600 mt-1 sm:mt-3 lg:mt-4">万円</p>
               </div>
-              <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
-                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">CEO</p>
-                <p className="text-xl sm:text-2xl lg:text-3xl font-thin mt-2 sm:mt-3 lg:mt-4">丸山 陸雄</p>
+              <div className="bg-gradient-to-br from-green-50 to-white sm:bg-white rounded-2xl sm:rounded-none shadow-sm sm:shadow-none p-6 sm:p-12 lg:p-16 text-center border border-gray-100 sm:border-0">
+                <div className="flex items-center justify-center mb-3 sm:mb-0">
+                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center sm:hidden">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                </div>
+                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2 sm:mb-4 lg:mb-6">CEO</p>
+                <p className="text-lg sm:text-2xl lg:text-3xl font-thin mt-1 sm:mt-3 lg:mt-4" style={{ color: '#79A676' }}>丸山 陸雄</p>
               </div>
             </div>
 
@@ -388,7 +423,7 @@ export default function Home() {
                   <h3 className="text-xl sm:text-2xl font-extralight text-gray-900">企業情報</h3>
                 </div>
                 
-                <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-100">
+                <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                   <div className="space-y-6 sm:space-y-8">
                     <div>
                       <h4 className="text-lg sm:text-xl font-light text-gray-900 mb-2 sm:mb-3">株式会社エコロパック</h4>
@@ -452,25 +487,39 @@ export default function Home() {
               <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-8 sm:mb-12 lg:mb-16 text-center">事業拠点</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12 text-center">
+                <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 sm:p-8 lg:p-12 text-center border border-gray-100 shadow-sm">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center">
+                      <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                  </div>
                   <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-3 sm:mb-4">本社</h4>
-                  <p className="text-sm sm:text-base text-gray-600 mb-2">
+                  <p className="text-sm sm:text-base text-gray-600 mb-3">
                     〒211-8530<br />
                     川崎市中原区苅宿45-1
                   </p>
-                  <div className="space-y-1 text-xs sm:text-sm text-gray-500">
+                  <div className="space-y-1 text-xs sm:text-sm text-gray-500 pt-3 border-t border-gray-100">
                     <p>TEL: 044-433-2065</p>
                     <p>FAX: 044-433-8706</p>
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12 text-center">
+                <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 sm:p-8 lg:p-12 text-center border border-gray-100 shadow-sm">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center">
+                      <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                    </div>
+                  </div>
                   <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-3 sm:mb-4">さいたま工場</h4>
-                  <p className="text-sm sm:text-base text-gray-600 mb-2">
+                  <p className="text-sm sm:text-base text-gray-600 mb-3">
                     〒339-0073<br />
                     埼玉県さいたま市岩槻区上野4-6-10
                   </p>
-                  <div className="space-y-1 text-xs sm:text-sm text-gray-500">
+                  <div className="space-y-1 text-xs sm:text-sm text-gray-500 pt-3 border-t border-gray-100">
                     <p>TEL: 048-792-0958</p>
                     <p>FAX: 048-792-0959</p>
                   </div>
