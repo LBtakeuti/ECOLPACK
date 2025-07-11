@@ -179,7 +179,7 @@ export default function Home() {
           <div className="w-full py-6 sm:py-10 lg:py-0">
             <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
-                <div className="lg:col-span-8">
+                <div className="lg:col-span-12">
                   <h1 className="text-xl sm:text-2xl lg:text-[3rem] leading-[1.3] lg:leading-[1.1] font-light tracking-tight mb-3 sm:mb-4 lg:mb-8">
                     {data.title}
                   </h1>
@@ -187,12 +187,6 @@ export default function Home() {
                   <p className="text-base sm:text-lg lg:text-2xl font-extralight text-gray-700 max-w-2xl">
                     {data.subtitle}
                   </p>
-                </div>
-                <div className="lg:col-span-4 flex items-center lg:items-end justify-center lg:justify-end mt-4 sm:mt-6 lg:mt-0">
-                  <div className="text-center lg:text-right">
-                    <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-1 sm:mb-2">ESTABLISHED</p>
-                    <p className="text-2xl sm:text-3xl lg:text-5xl font-thin" style={{ color: '#79A676' }}>1996</p>
-                  </div>
                 </div>
               </div>
             </div>
