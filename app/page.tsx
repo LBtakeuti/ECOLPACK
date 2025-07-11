@@ -389,7 +389,7 @@ export default function Home() {
               </div>
               <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
                 <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">CEO</p>
-                <p className="text-xl sm:text-2xl lg:text-3xl font-thin mt-2 sm:mt-3 lg:mt-4">丸山 陸雄</p>
+                <p className="text-xl sm:text-2xl lg:text-3xl font-thin mt-2 sm:mt-3 lg:mt-4">丸山 睦雄</p>
               </div>
             </div>
 
@@ -403,73 +403,96 @@ export default function Home() {
                 <div className="space-y-6 sm:space-y-8">
                   <div>
                     <h4 className="text-lg sm:text-xl font-light text-gray-900 mb-2 sm:mb-3">株式会社エコロパック</h4>
-                    <p className="text-sm sm:text-base text-gray-600 font-light">帝国通信工業株式会社（東証プライム上場）全額出資</p>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">帝国通信工業株式会社（東証プライム上場）全額出資の会社</p>
                   </div>
 
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-200">
-                      <p className="text-sm text-gray-500">取引銀行</p>
-                      <p className="text-sm sm:text-base text-gray-900">みずほ銀行</p>
+                      <p className="text-sm text-gray-500">金融機関</p>
+                      <p className="text-sm sm:text-base text-gray-900">みずほ銀行川崎支店</p>
                     </div>
                     <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-200">
-                      <p className="text-sm text-gray-500">組織形態</p>
-                      <p className="text-sm sm:text-base text-gray-900">株式会社</p>
+                      <p className="text-sm text-gray-500">代表者</p>
+                      <p className="text-sm sm:text-base text-gray-900">代表取締役　丸山 睦雄</p>
                     </div>
-                    <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-200">
-                      <p className="text-sm text-gray-500">従業員数</p>
-                      <p className="text-sm sm:text-base text-gray-900">50名</p>
+                  </div>
+
+                  {/* 所在地セクション */}
+                  <div className="pt-4">
+                    <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-4">所在地</h4>
+                    <div className="space-y-4">
+                      <div>
+                        <p className="font-medium text-sm text-gray-700 mb-1">本社</p>
+                        <p className="text-sm text-gray-600">
+                          〒211-8530<br />
+                          川崎市中原区苅宿45-1<br />
+                          TEL: 044-433-2065　FAX: 044-433-8706
+                        </p>
+                      </div>
+                      <div>
+                        <p className="font-medium text-sm text-gray-700 mb-1">さいたま工場</p>
+                        <p className="text-sm text-gray-600">
+                          〒339-0073<br />
+                          埼玉県さいたま市岩槻区上野4-6-10<br />
+                          TEL: 048-792-0958　FAX: 048-792-0959
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 lg:mt-0">
-                <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-6 sm:mb-8">事業内容</h3>
+                <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-6 sm:mb-8">業務内容</h3>
                 
                 <div className="space-y-6 sm:space-y-8">
                   <div>
-                    <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2">研究開発</h4>
-                    <p className="text-sm sm:text-base text-gray-600">天然有機物と熱可塑性樹脂との複合材の開発</p>
+                    <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2">1. 天然有機物と熱可塑性樹脂との複合材の開発、製造</h4>
                   </div>
 
                   <div>
-                    <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2">製品ラインナップ</h4>
-                    <ul className="space-y-1 text-sm sm:text-base text-gray-600">
-                      <li>・バラ状緩衝材（ブランフォームシリーズ）</li>
-                      <li>・シート状緩衝材（エコロパット）</li>
-                      <li>・パット状発泡緩衝材（ブランフォームグリーン）</li>
+                    <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2">2. 製造、販売商品</h4>
+                    <ul className="space-y-2 text-sm sm:text-base text-gray-600 ml-4">
+                      <li>1) バラ状緩衝材<br />
+                        <span className="ml-4 text-xs">（ブランフォームトップ・ブランフォーム・ブランフォームBIG）</span>
+                      </li>
+                      <li>2) シート状緩衝材<br />
+                        <span className="ml-4 text-xs">（エコロパット）</span>
+                      </li>
+                      <li>3) パット状発泡緩衝材<br />
+                        <span className="ml-4 text-xs">（ブランフォームグリーン）</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* 関連企業セクション */}
             <section className="mt-16 sm:mt-24 lg:mt-32">
-              <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-8 sm:mb-12 lg:mb-16 text-center">事業拠点</h3>
+              <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-8 sm:mb-12 lg:mb-16 text-center">関連企業・本社</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12 text-center">
-                  <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-3 sm:mb-4">本社</h4>
-                  <p className="text-sm sm:text-base text-gray-600 mb-2">
-                    〒211-8530<br />
-                    川崎市中原区苅宿45-1
-                  </p>
-                  <div className="space-y-1 text-xs sm:text-sm text-gray-500">
-                    <p>TEL: 044-433-2065</p>
-                    <p>FAX: 044-433-8706</p>
+              <div className="space-y-8">
+                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12">
+                  <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-4">帝国通信工業株式会社</h4>
+                  <div className="space-y-4 text-sm sm:text-base text-gray-600">
+                    <div>
+                      <p className="font-medium mb-1">本社</p>
+                      <p>神奈川県川崎市中原区苅宿45-1</p>
+                    </div>
+                    <div>
+                      <p className="font-medium mb-1">国内拠点</p>
+                      <p>大阪・長野（駒ヶ根・飯田・須坂・木曽）・福井</p>
+                    </div>
+                    <div>
+                      <p className="font-medium mb-1">国外拠点</p>
+                      <p>アメリカ・中国・韓国・台湾・タイ・シンガポール・ベトナム</p>
+                    </div>
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12 text-center">
-                  <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-3 sm:mb-4">さいたま工場</h4>
-                  <p className="text-sm sm:text-base text-gray-600 mb-2">
-                    〒339-0073<br />
-                    埼玉県さいたま市岩槻区上野4-6-10
-                  </p>
-                  <div className="space-y-1 text-xs sm:text-sm text-gray-500">
-                    <p>TEL: 048-792-0958</p>
-                    <p>FAX: 048-792-0959</p>
-                  </div>
+                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12">
+                  <h4 className="text-lg sm:text-xl font-medium text-gray-900">帝通エンジニアリング株式会社</h4>
                 </div>
               </div>
             </section>
