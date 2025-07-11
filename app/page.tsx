@@ -561,8 +561,8 @@ export default function Home() {
       </nav>
 
       {/* モバイルナビゲーション */}
-      <nav className={`lg:hidden bg-white border-b border-gray-100 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-        <div className="px-4 py-2">
+      <nav className={`lg:hidden fixed top-[72px] sm:top-[88px] left-0 right-0 bg-white border-b border-gray-100 z-40 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+        <div className="px-4 py-2 max-h-[calc(100vh-72px)] sm:max-h-[calc(100vh-88px)] overflow-y-auto">
           {['top', 'branform', 'big', 'ecolopat', 'green', 'company'].map((tab) => (
             <button
               key={tab}
@@ -586,6 +586,14 @@ export default function Home() {
           ))}
         </div>
       </nav>
+
+      {/* モバイルメニューオーバーレイ */}
+      {isMobileMenuOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30 top-[72px] sm:top-[88px]"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
 
       {/* コンテンツ */}
       <div>
