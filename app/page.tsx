@@ -377,42 +377,20 @@ export default function Home() {
 
         <div className="bg-white">
           <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-24 lg:py-32">
-            {/* モバイル向けカード表示 */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-px mb-12 sm:mb-24 lg:mb-32">
-              <div className="bg-gradient-to-br from-green-50 to-white sm:bg-white rounded-2xl sm:rounded-none shadow-sm sm:shadow-none p-6 sm:p-12 lg:p-16 text-center border border-gray-100 sm:border-0">
-                <div className="flex items-center justify-center mb-3 sm:mb-0">
-                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center sm:hidden">
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                </div>
-                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2 sm:mb-4 lg:mb-6">ESTABLISHED</p>
-                <p className="text-2xl sm:text-4xl lg:text-6xl font-thin" style={{ color: '#79A676' }}>1996</p>
-                <p className="text-sm font-light text-gray-600 mt-1 sm:mt-3 lg:mt-4">年6月11日</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px mb-16 sm:mb-24 lg:mb-32" style={{ backgroundColor: '#79A676' }}>
+              <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
+                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">ESTABLISHED</p>
+                <p className="text-3xl sm:text-4xl lg:text-6xl font-thin">1996</p>
+                <p className="text-sm font-light text-gray-600 mt-2 sm:mt-3 lg:mt-4">年6月11日</p>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-white sm:bg-white rounded-2xl sm:rounded-none shadow-sm sm:shadow-none p-6 sm:p-12 lg:p-16 text-center border border-gray-100 sm:border-0">
-                <div className="flex items-center justify-center mb-3 sm:mb-0">
-                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center sm:hidden">
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                </div>
-                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2 sm:mb-4 lg:mb-6">CAPITAL</p>
-                <p className="text-2xl sm:text-4xl lg:text-6xl font-thin" style={{ color: '#79A676' }}>3,600</p>
-                <p className="text-sm font-light text-gray-600 mt-1 sm:mt-3 lg:mt-4">万円</p>
+              <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
+                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">CAPITAL</p>
+                <p className="text-3xl sm:text-4xl lg:text-6xl font-thin">3,600</p>
+                <p className="text-sm font-light text-gray-600 mt-2 sm:mt-3 lg:mt-4">万円</p>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-white sm:bg-white rounded-2xl sm:rounded-none shadow-sm sm:shadow-none p-6 sm:p-12 lg:p-16 text-center border border-gray-100 sm:border-0">
-                <div className="flex items-center justify-center mb-3 sm:mb-0">
-                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center sm:hidden">
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                </div>
-                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-2 sm:mb-4 lg:mb-6">CEO</p>
-                <p className="text-lg sm:text-2xl lg:text-3xl font-thin mt-1 sm:mt-3 lg:mt-4" style={{ color: '#79A676' }}>丸山 陸雄</p>
+              <div className="bg-white p-8 sm:p-12 lg:p-16 text-center">
+                <p className="text-xs font-light tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 lg:mb-6">CEO</p>
+                <p className="text-xl sm:text-2xl lg:text-3xl font-thin mt-2 sm:mt-3 lg:mt-4">丸山 陸雄</p>
               </div>
             </div>
 
@@ -423,26 +401,24 @@ export default function Home() {
                   <h3 className="text-xl sm:text-2xl font-extralight text-gray-900">企業情報</h3>
                 </div>
                 
-                <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="space-y-6 sm:space-y-8">
-                    <div>
-                      <h4 className="text-lg sm:text-xl font-light text-gray-900 mb-2 sm:mb-3">株式会社エコロパック</h4>
-                      <p className="text-sm sm:text-base text-gray-600 font-light">帝国通信工業株式会社（東証プライム上場）全額出資</p>
-                    </div>
+                <div className="space-y-6 sm:space-y-8">
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-light text-gray-900 mb-2 sm:mb-3">株式会社エコロパック</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">帝国通信工業株式会社（東証プライム上場）全額出資</p>
+                  </div>
 
-                    <div className="space-y-3 sm:space-y-4">
-                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-100">
-                        <p className="text-sm text-gray-500">取引銀行</p>
-                        <p className="text-sm sm:text-base text-gray-900">みずほ銀行</p>
-                      </div>
-                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-100">
-                        <p className="text-sm text-gray-500">組織形態</p>
-                        <p className="text-sm sm:text-base text-gray-900">株式会社</p>
-                      </div>
-                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-100">
-                        <p className="text-sm text-gray-500">従業員数</p>
-                        <p className="text-sm sm:text-base text-gray-900">50名</p>
-                      </div>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-200">
+                      <p className="text-sm text-gray-500">取引銀行</p>
+                      <p className="text-sm sm:text-base text-gray-900">みずほ銀行</p>
+                    </div>
+                    <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-200">
+                      <p className="text-sm text-gray-500">組織形態</p>
+                      <p className="text-sm sm:text-base text-gray-900">株式会社</p>
+                    </div>
+                    <div className="flex items-center justify-between py-2 sm:py-3 border-b border-gray-200">
+                      <p className="text-sm text-gray-500">従業員数</p>
+                      <p className="text-sm sm:text-base text-gray-900">50名</p>
                     </div>
                   </div>
                 </div>
@@ -451,33 +427,19 @@ export default function Home() {
               <div className="mt-8 lg:mt-0">
                 <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-6 sm:mb-8">事業内容</h3>
                 
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow">
-                    <div className="flex items-start">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                        <span className="text-xs sm:text-sm text-gray-600">R&D</span>
-                      </div>
-                      <div>
-                        <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-1 sm:mb-2">研究開発</h4>
-                        <p className="text-sm sm:text-base text-gray-600">天然有機物と熱可塑性樹脂との複合材の開発</p>
-                      </div>
-                    </div>
+                <div className="space-y-6 sm:space-y-8">
+                  <div>
+                    <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2">研究開発</h4>
+                    <p className="text-sm sm:text-base text-gray-600">天然有機物と熱可塑性樹脂との複合材の開発</p>
                   </div>
 
-                  <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow">
-                    <div className="flex items-start">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                        <span className="text-xs sm:text-sm text-gray-600">MFG</span>
-                      </div>
-                      <div>
-                        <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-1 sm:mb-2">製品ラインナップ</h4>
-                        <ul className="space-y-1 text-sm sm:text-base text-gray-600">
-                          <li>・バラ状緩衝材（ブランフォームシリーズ）</li>
-                          <li>・シート状緩衝材（エコロパット）</li>
-                          <li>・パット状発泡緩衝材（ブランフォームグリーン）</li>
-                        </ul>
-                      </div>
-                    </div>
+                  <div>
+                    <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2">製品ラインナップ</h4>
+                    <ul className="space-y-1 text-sm sm:text-base text-gray-600">
+                      <li>・バラ状緩衝材（ブランフォームシリーズ）</li>
+                      <li>・シート状緩衝材（エコロパット）</li>
+                      <li>・パット状発泡緩衝材（ブランフォームグリーン）</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -486,40 +448,26 @@ export default function Home() {
             <section className="mt-16 sm:mt-24 lg:mt-32">
               <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-8 sm:mb-12 lg:mb-16 text-center">事業拠点</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-                <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 sm:p-8 lg:p-12 text-center border border-gray-100 shadow-sm">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center">
-                      <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12 text-center">
                   <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-3 sm:mb-4">本社</h4>
-                  <p className="text-sm sm:text-base text-gray-600 mb-3">
+                  <p className="text-sm sm:text-base text-gray-600 mb-2">
                     〒211-8530<br />
                     川崎市中原区苅宿45-1
                   </p>
-                  <div className="space-y-1 text-xs sm:text-sm text-gray-500 pt-3 border-t border-gray-100">
+                  <div className="space-y-1 text-xs sm:text-sm text-gray-500">
                     <p>TEL: 044-433-2065</p>
                     <p>FAX: 044-433-8706</p>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 sm:p-8 lg:p-12 text-center border border-gray-100 shadow-sm">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center">
-                      <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                      </svg>
-                    </div>
-                  </div>
+                <div className="bg-gray-50 p-6 sm:p-8 lg:p-12 text-center">
                   <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-3 sm:mb-4">さいたま工場</h4>
-                  <p className="text-sm sm:text-base text-gray-600 mb-3">
+                  <p className="text-sm sm:text-base text-gray-600 mb-2">
                     〒339-0073<br />
                     埼玉県さいたま市岩槻区上野4-6-10
                   </p>
-                  <div className="space-y-1 text-xs sm:text-sm text-gray-500 pt-3 border-t border-gray-100">
+                  <div className="space-y-1 text-xs sm:text-sm text-gray-500">
                     <p>TEL: 048-792-0958</p>
                     <p>FAX: 048-792-0959</p>
                   </div>
