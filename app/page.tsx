@@ -359,10 +359,8 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 <div className="lg:col-span-8">
                   <p className="text-xs font-light tracking-[0.3em] text-white/70 mb-3 sm:mb-4 lg:mb-8">COMPANY OVERVIEW</p>
-                  <h1 className="text-2xl sm:text-3xl lg:text-[5rem] leading-[1.2] lg:leading-[0.9] font-thin tracking-tight whitespace-nowrap">
-                    <span className="block lg:inline">株式会社</span>
-                    <span className="lg:hidden"> </span>
-                    <span className="block lg:inline">エコロパック</span>
+                  <h1 className="text-xl sm:text-3xl lg:text-[5rem] leading-[1.2] lg:leading-[0.9] font-thin tracking-tight">
+                    <span className="inline-block lg:block">株式会社エコロパック</span>
                   </h1>
                   {/* モバイル向け追加情報 */}
                   <div className="mt-6 lg:hidden">
